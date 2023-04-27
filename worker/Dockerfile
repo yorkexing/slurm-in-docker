@@ -1,7 +1,7 @@
-FROM scidas/slurm.base:19.05.1
-MAINTAINER Michael J. Stealey <stealey@renci.org>
+FROM harbor.cqxyy.net/wict/slurm.base:23.02.1
+MAINTAINER xingyuke@cqxyy.net
 
-# install openmpi 3.0.1
+# install openmpi 4.1.5
 RUN yum -y install \
   gcc-c++ \
   gcc-gfortran \
@@ -18,9 +18,9 @@ RUN yum -y install \
   bzip2 \
   expectk \
   make \
-  && wget https://sourceforge.net/projects/lmod/files/Lmod-7.7.tar.bz2 \
-  && tar -xjvf Lmod-7.7.tar.bz2
-WORKDIR /Lmod-7.7
+  && wget https://sourceforge.net/projects/lmod/files/Lmod-8.7.tar.bz2 \
+  && tar -xjvf Lmod-8.7.tar.bz2
+WORKDIR /Lmod-8.7
 RUN ./configure --prefix=/opt/apps \
   && make install \
   && ln -s /opt/apps/lmod/lmod/init/profile /etc/profile.d/z00_lmod.sh \
@@ -32,7 +32,7 @@ WORKDIR /home/worker
 RUN rm -f /packages/slurm-*.rpm /packages/openmpi-*.rpm \
   && yum clean all \
   && rm -rf /var/cache/yum \
-  && rm -f /Lmod-7.7.tar.bz2
+  && rm -f /Lmod-8.7.tar.bz2
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 

@@ -1,5 +1,5 @@
-FROM scidas/slurm.base:19.05.1
-MAINTAINER Michael J. Stealey <stealey@renci.org>
+FROM harbor.cqxyy.net/wict/slurm.base:23.02.1
+MAINTAINER xingyuke@cqxyy.net
 
 ENV DBD_ADDR=database \
   DBD_HOST=database \

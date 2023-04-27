@@ -1,7 +1,7 @@
 FROM centos:7
-MAINTAINER Michael J. Stealey <stealey@renci.org>
+MAINTAINER xingyuke@cqxyy.net
 
-ENV SLURM_VERSION=19.05.1
+ENV SLURM_VERSION=23.02.1
 
 RUN yum -y install \
   deltarpm \

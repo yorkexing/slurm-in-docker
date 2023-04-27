@@ -1,6 +1,6 @@
 
-SLURM_VERSION = 19.05.1
-IMAGE = scidas/slurm.database
+SLURM_VERSION = 23.02.1
+IMAGE = harbor.cqxyy.net/wict/slurm.database
 
 .PHONY: all build clean test
 

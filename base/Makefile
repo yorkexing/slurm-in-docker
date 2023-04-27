@@ -1,6 +1,6 @@
 
-SLURM_VERSION = 19.05.1
-IMAGE = scidas/slurm.base
+SLURM_VERSION = 23.02.1
+IMAGE = harbor.cqxyy.net/wict/slurm.base
 
 DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
